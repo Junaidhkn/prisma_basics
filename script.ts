@@ -25,9 +25,22 @@ async function main() {
 
 	// // Create Post
 
-	const newPost = await prisma.post.create({
+	// const newPost = await prisma.post.create({
+	// 	data: {
+	// 		title: 'Post One',
+	// 	},
+	// });
+
+	const updatePost = await prisma.post.update({
+		where: {
+			id: '63d3b26e1aef9c18f3416b59',
+		},
 		data: {
-			title: 'Post One',
+			author: {
+				connect: {
+					email: 'alice@prisma.io',
+				},
+			},
 		},
 	});
 }
