@@ -22,6 +22,14 @@ async function main() {
 	// 			name: 'alice',
 	// 		},
 	// 	});
+
+	// // Create Post
+
+	const newPost = await prisma.post.create({
+		data: {
+			title: 'Post One',
+		},
+	});
 }
 
 main()
